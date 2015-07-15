@@ -6,8 +6,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import org.hibernate.annotations.ForeignKey;
 
 @Entity
 @Table (name="pessoa")
@@ -19,19 +21,23 @@ public class Pessoa implements Serializable{
     private Integer idPessoa;
     @Column(name="nome",nullable = false, length=80)
     private String nome;
-   @Column(name="email",nullable = false, length=80)
+    @Column(name="email",nullable = false, length=80)
     private String email;
-   @Column(name="telefone",nullable = false, length=15)//(067)-8888-8888
+    @Column(name="telefone",nullable = false, length=15)//(067)-8888-8888
     private String telefone;
-   @Column(name="cpf",nullable = false, length=14)//999.999.999-99
+    @Column(name="cpf",nullable = false, length=14)//999.999.999-99
     private String cpf;
-   @Column(name="dtNasc",nullable = false)
+    @Column(name="dtNasc",nullable = false)
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dtNasc;
-   @Column(name="dtCadastro",nullable = false)
+    @Column(name="dtCadastro",nullable = false)
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dtCadastro;
 
+    
+    @ManyToOne(optional = false)
+    @ForeignKey(name="PessoaSexo")
+    private Pessoa pessoa;
     public Pessoa() {
     }
 
