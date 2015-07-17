@@ -8,7 +8,10 @@
     <packaging>war</packaging>
 
     <name>agente_transito</name>
-
+<!--
+Todas as dependencias configuradas aqui serão baixadas em:
+C:\Users\36694320191\.m2\repository    
+-->
     <properties>
         <spring.version>3.0.5.RELEASE</spring.version>
         <themes.version>1.0.8</themes.version>
