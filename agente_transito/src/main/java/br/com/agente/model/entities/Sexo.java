@@ -1,4 +1,3 @@
-
 package br.com.agente.model.entities;
 
 import java.io.Serializable;
@@ -15,19 +14,20 @@ import org.hibernate.annotations.ForeignKey;
 @Entity
 @Table(name="sexo")
 public class Sexo implements Serializable {
-    private static final long serialVersionUID = 1L;
+    
+    private static final long serialVersionUID =  1L;   
     
     @Id
     @GeneratedValue
-    @Column(name="IdSexo", nullable=false)
-    private Integer idSexo; 
-    @Column(name="descrição", unique=true, nullable=false, length=9)
-    private String descrição;
-    
-    @OneToMany(mappedBy = "sexo", fetch=FetchType.LAZY)
-    @ForeignKey(name="PessoaSexo")
-    private List<Pessoa> pessoas;
+    @Column(name="IdSexo",nullable=false)
+    private Integer idSexo;
+    @Column(name="Descricao", unique=true, nullable=false, length=9)
+    private String descricao;
 
+    @OneToMany(mappedBy = "sexo", fetch = FetchType.LAZY)
+    @ForeignKey(name = "PessoaSexo")        
+    private List<Pessoa> pessoas;
+    
     public Sexo() {
     }
 
@@ -39,12 +39,12 @@ public class Sexo implements Serializable {
         this.idSexo = idSexo;
     }
 
-    public String getDescrição() {
-        return descrição;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDescrição(String descrição) {
-        this.descrição = descrição;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public List<Pessoa> getPessoas() {
@@ -54,15 +54,11 @@ public class Sexo implements Serializable {
     public void setPessoas(List<Pessoa> pessoas) {
         this.pessoas = pessoas;
     }
-
-    
-    
-    
     
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 43 * hash + (this.idSexo != null ? this.idSexo.hashCode() : 0);
+        int hash = 7;
+        hash = 97 * hash + (this.idSexo != null ? this.idSexo.hashCode() : 0);
         return hash;
     }
 
@@ -80,12 +76,5 @@ public class Sexo implements Serializable {
         }
         return true;
     }
-    /*por padrão: toda entidade que for criar tem que 
-    - implementar serializabel
-    - inserir (alt+insert):
-        - criar um construtor vazio
-        - getter e setters selecionar tudo
-        - equal e hashcold selecionar os dois ids do hashcod e o outro do lado
-    */
     
 }
