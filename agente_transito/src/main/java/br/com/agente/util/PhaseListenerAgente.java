@@ -4,9 +4,9 @@ import javax.faces.event.PhaseEvent;
 import javax.faces.event.PhaseId;
 import javax.faces.event.PhaseListener;
 import org.hibernate.Session;
-
+// O PhaseListener implementa uma interface do JSF
 public class PhaseListenerAgente implements PhaseListener {
-
+    //
     //Antes da Fase
     @Override
     public void beforePhase(PhaseEvent fase) {

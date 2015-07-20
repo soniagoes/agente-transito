@@ -14,8 +14,11 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import org.hibernate.annotations.ForeignKey;
 
-
-@Entity
+//essa classe representa a tabela pessoa do banco de dados
+//representa de forma orientada a objetos representando as tabelas do banco relacional.
+//utilizando as anotações do hibernate
+//
+@Entity // essa classe representa uma entidade do banco de dados
 @Table (name="pessoa")
 public class Pessoa implements Serializable {
     
@@ -54,6 +57,7 @@ public class Pessoa implements Serializable {
     @ManyToOne(optional=false)
     @ForeignKey(name = "PessoaSexo") 
     @JoinColumn(name="IdSexo", referencedColumnName = "IdSexo")
+    
     private Sexo sexo;
 
     public Pessoa() {
