@@ -39,7 +39,8 @@ public class Endereco implements Serializable {
     mesmo que eles existam no banco. Essa é uma forma de não sobrecarregar sua aplicação com dados 
     inúteis que não serão utilizados, tornando-a rápida e performática.
     */
-    @OneToOne(optional=true, fetch= FetchType.LAZY)
+    @OneToOne(optional=true, fetch= FetchType.LAZY) //não traz todos os enderecos. Traz especificamente o que quer que traga.
+    //FetchType.Eager >> traz todas as pessoas que tenham aquele endereço.
     @ForeignKey(name="EnderecoPessoa")
     @JoinColumn(name = "IdPessoa", referencedColumnName = "IdPessoa")
     private Pessoa pessoa;

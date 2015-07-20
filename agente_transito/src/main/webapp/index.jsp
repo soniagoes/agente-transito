@@ -15,6 +15,7 @@
 </style>
     </head>
     <body>
-        <div class="td">Agente de Trânsito</div>
+    
+        <font face="Courier New, Courier, monospace" color="#336699" size="+2">Agente de Trânsito</font>
     </body>
 </html>
