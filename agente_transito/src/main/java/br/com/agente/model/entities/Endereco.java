@@ -32,7 +32,13 @@ public class Endereco implements Serializable {
     private Integer numero;
     @Column (name="Complemento")
     private Integer complemento;
-    
+    /*
+    Perceba que em nossos relacionamentos OneToMany e ManyToOne definimos uma propriedade 
+    “fetch” = FetchType.LAZY. Isso significa que ao realizarmos um “SELECT * from Endereco” 
+    teremos todos os campos retornados, mas os campos com a propriedade FetchType.LAZY estarão nulos, 
+    mesmo que eles existam no banco. Essa é uma forma de não sobrecarregar sua aplicação com dados 
+    inúteis que não serão utilizados, tornando-a rápida e performática.
+    */
     @OneToOne(optional=true, fetch= FetchType.LAZY)
     @ForeignKey(name="EnderecoPessoa")
     @JoinColumn(name = "IdPessoa", referencedColumnName = "IdPessoa")

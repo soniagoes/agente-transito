@@ -11,6 +11,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import org.hibernate.annotations.ForeignKey;
 
+/*
+toda classe que criar tem que escolher o id para o hashcod, 
+construtor vazio
+geters e seter
+equal hashcod
+e implementa serializable
+*/
 @Entity
 @Table(name="sexo")
 public class Sexo implements Serializable {
@@ -24,10 +31,12 @@ public class Sexo implements Serializable {
     @Column(name="Descricao", unique=true, nullable=false, length=9)
     private String descricao;
 
-    @OneToMany(mappedBy = "sexo", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "sexo", fetch = FetchType.LAZY) // mapeado pela tabela sexo - fetchType.LAZY
     @ForeignKey(name = "PessoaSexo")        
-    private List<Pessoa> pessoas;
-    
+    private List<Pessoa> pessoas; //sempre colocar nome de tabela no singular
+    /*
+    atraves do id sexo da pessoa recupera a pessoa
+    */
     public Sexo() {
     }
 
