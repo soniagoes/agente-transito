@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          id="WebApp_ID" version="2.5">
     
-    <display-name>agente_transito</display-name>
+    <display-name>Agente Trânsito</display-name>
     
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
@@ -32,8 +32,8 @@
     <!-- Configurações do tema do PrimeFaces -->
     <context-param>  
         <param-name>primefaces.THEME</param-name>  
-        <param-value>cupertino</param-value>  
-    </context-param>             
+        <param-value>sam</param-value>  
+    </context-param>         
     
     <!-- Filtros do Spring  -->
     <listener>
